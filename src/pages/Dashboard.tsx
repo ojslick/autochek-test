@@ -23,7 +23,10 @@ const Dashboard: React.FC = () => {
       ) : error ? (
         <div>Error</div>
       ) : (
-        permits?.map((permit) => <Permit key={permit.id} data={permit} />)
+        permits
+          ?.reverse()
+          .slice(0, 10)
+          .map((permit) => <Permit key={permit.id} data={permit} />)
       )}
     </div>
   );
