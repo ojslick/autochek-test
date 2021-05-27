@@ -1,0 +1,12 @@
+.permit-container {
+  margin-top: 20px;
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  border: 1px solid #4e4e4e;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
