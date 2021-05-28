@@ -16,6 +16,8 @@ const Dashboard: React.FC = () => {
     dispatch(fetchPermitsRequest());
   }, []);
 
+  console.log("permits", permits);
+
   return (
     <div className="dashboard-container">
       {pending ? (
@@ -23,8 +25,14 @@ const Dashboard: React.FC = () => {
       ) : error ? (
         <div>Error</div>
       ) : (
+        //@ts-ignore
         permits
-          ?.reverse()
+          .sort((x, y) => {
+            return (
+              new Date(y.issue_date).getTime() -
+              new Date(x.issue_date).getTime()
+            );
+          })
           .slice(0, 10)
           .map((permit) => <Permit key={permit.id} data={permit} />)
       )}
