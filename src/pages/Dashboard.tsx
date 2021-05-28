@@ -34,7 +34,9 @@ const Dashboard: React.FC = () => {
             );
           })
           .slice(0, 10)
-          .map((permit) => <Permit key={permit.id} data={permit} />)
+          .map((permit) => {
+            return <Permit key={permit.id} data={permit} />;
+          })
       )}
     </div>
   );
